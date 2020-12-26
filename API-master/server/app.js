@@ -1,7 +1,7 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 const app = express();
-const querystring = require('querystring');
+const query = require('query');
 const cors = require('cors');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 
 app.post('/user', (req, res) => {
     console.log('body :', req.body);
-    res.json({ name:req.body.name,message:"success" });
+    res.json({ name:req.body.name,message:"Hello To khadija " });
 });
 
 app.get('/user', (req, res) => {
-    res.json({ message:"Hello " + req.query.name  });
+    res.json({ message:"Hello To khadija " + req.query.name  });
 });
 
 app.listen(3000,()=>{
